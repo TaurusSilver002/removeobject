@@ -1,0 +1,22 @@
+{
+  "language": "Langue",
+  "@language": {
+    "description": "Title for the language settings page"
+  },
+  "continueButton": "Continuer",
+  "@continueButton": {
+    "description": "Button text to confirm language selection"
+  },
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "gallery": "Galerie",
+  "@gallery": {
+    "description": "Gallery page title"
+  },
+  "premium": "Premium",
+  "@premium": {
+    "description": "Premium subscription text"
+  }
+}
