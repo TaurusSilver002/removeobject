@@ -40,6 +40,8 @@ dependencies:
   photo_manager: ^3.7.1
   shared_preferences: ^2.2.3
   image_picker: ^1.1.2
+  http: ^1.1.0
+  translator: ^1.0.3+1
 
 dev_dependencies:
   flutter_test:
@@ -57,8 +59,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # Generate localization files
-  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

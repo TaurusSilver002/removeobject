@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:objectremove/config.dart';
+import 'package:objectremove/services/app_translations.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class SettingPage extends StatelessWidget {
         backgroundColor: color,
         child: Icon(icon, color: Colors.white),
       ),
-      title: Text(title, style: const TextStyle(color: Colors.white)),
+      title: TranslatableText(title, style: const TextStyle(color: Colors.white)),
       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
       onTap: onTap,
     );
@@ -32,7 +33,7 @@ class SettingPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Settings', style: TextStyle(color: Colors.white)),
+        title: TranslatableText('Settings', style: const TextStyle(color: Colors.white)),
       ),
       body: Column(
         children: [
@@ -63,9 +64,9 @@ class SettingPage extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              const Text(
+                              TranslatableText(
                                 'Premium',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -78,9 +79,9 @@ class SettingPage extends StatelessWidget {
                                   color: Colors.yellow,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Text(
+                                child: TranslatableText(
                                   'Pro',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12,
@@ -90,9 +91,9 @@ class SettingPage extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 4),
-                          const Text(
+                          TranslatableText(
                             'Upgrade now for unlimited High Quality Image',
-                            style: TextStyle(color: Colors.white, fontSize: 12),
+                            style: const TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ],
                       ),
@@ -107,7 +108,7 @@ class SettingPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: TranslatableText(
                 'Other Setting',
                 style: TextStyle(color: Colors.white.withOpacity(0.8), fontWeight: FontWeight.bold),
               ),

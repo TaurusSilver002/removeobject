@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:objectremove/routes/detect.dart';
+import 'package:objectremove/services/app_translations.dart';
 import 'package:photo_manager/photo_manager.dart';
 
 class GalleryFromDevice extends StatefulWidget {
@@ -105,7 +106,7 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
         child: Wrap(children: [
           ListTile(
             leading: const Icon(Icons.photo_library),
-            title: const Text('Photo Library'),
+            title: 'Photo Library'.tr(),
             onTap: () {
               _getImageFrom(ImageSource.gallery);
               Navigator.pop(context);
@@ -113,7 +114,7 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
           ),
           ListTile(
             leading: const Icon(Icons.photo_camera),
-            title: const Text('Camera'),
+            title: 'Camera'.tr(),
             onTap: () {
               _getImageFrom(ImageSource.camera);
               Navigator.pop(context);
@@ -165,8 +166,8 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
                 onPressed: () => Navigator.pop(context),
               ),
               const SizedBox(width: 10),
-              const Text('Remove Object',
-                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+              TranslatableText('Remove Object',
+                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
               const Spacer(),
               // IconButton(
               //   icon: const Icon(Icons.menu, color: Colors.white),
@@ -287,7 +288,7 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
                 backgroundColor: Colors.red,
                 shape: const StadiumBorder(),
               ),
-              child: const Text('Edit', style: TextStyle(fontSize: 16, color: Colors.white)),
+              child: TranslatableText('Edit', style: const TextStyle(fontSize: 16, color: Colors.white)),
             ),
           ),
         ),

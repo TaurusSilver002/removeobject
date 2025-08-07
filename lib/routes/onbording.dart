@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:objectremove/config.dart';
+import 'package:objectremove/services/app_translations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -104,7 +105,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onPressed: () {
                     _completeOnboarding();
                   },
-                  child: const Text(
+                  child: const TranslatableText(
                     'Skip',
                     style: TextStyle(
                       color: Colors.white70,
@@ -130,7 +131,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    TranslatableText(
                       onboardingData[currentIndex]['title']!,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
@@ -141,7 +142,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    Text(
+                    TranslatableText(
                       onboardingData[currentIndex]['subtitle']!,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
@@ -174,7 +175,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            TranslatableText(
                               onboardingData[currentIndex]['button']!,
                               style: const TextStyle(
                                 color: Colors.white,

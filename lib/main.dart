@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:objectremove/routes/gallary.dart';
 import 'package:objectremove/routes/onbording.dart';
 import 'package:objectremove/routes/paywall.dart';
@@ -9,6 +8,7 @@ import 'package:objectremove/routes/setting.dart';
 import 'package:objectremove/routes/splash.dart';
 import 'package:objectremove/routes/terms.dart';
 import 'package:objectremove/routes/language.dart';
+import 'package:objectremove/services/app_translations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -28,7 +28,12 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _loadSavedLocale();
+    _initializeApp();
+  }
+
+  Future<void> _initializeApp() async {
+    await AppTranslations.initialize();
+    await _loadSavedLocale();
   }
 
   Future<void> _loadSavedLocale() async {
@@ -44,6 +49,9 @@ class _MyAppState extends State<MyApp> {
       _locale = locale;
     });
     
+    // Update translation system
+    await AppTranslations.setLanguage(locale.languageCode);
+    
     // Save locale to SharedPreferences
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('locale', locale.languageCode);
@@ -57,17 +65,17 @@ class _MyAppState extends State<MyApp> {
         Locale('en', ''), // English
         Locale('es', ''), // Spanish
         Locale('fr', ''), // French
-        Locale('de', ''), // German
-        Locale('zh', ''), // Chinese
-        Locale('ja', ''), // Japanese
-        Locale('ko', ''), // Korean
         Locale('ar', ''), // Arabic
-        Locale('pt', ''), // Portuguese
-        Locale('hi', ''), // Hindi
-        Locale('it', ''), // Italian
+        // Temporarily removed languages that cause crashes
+        // Locale('de', ''), // German
+        // Locale('zh', ''), // Chinese
+        // Locale('ja', ''), // Japanese
+        // Locale('ko', ''), // Korean
+        // Locale('pt', ''), // Portuguese
+        // Locale('hi', ''), // Hindi
+        // Locale('it', ''), // Italian
       ],
       localizationsDelegates: const [
-        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:objectremove/services/app_translations.dart';
 
 import 'package:photo_manager/src/types/entity.dart';
 
@@ -29,13 +30,13 @@ class _DetectPageState extends State<DetectPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detect'),
+        title: 'Detect'.tr(),
       ),
       body: Center(
         child: _selectedImage == null
             ? ElevatedButton(
                 onPressed: _pickImage,
-                child: const Text('Pick Image from Gallery'),
+                child: 'Pick Image from Gallery'.tr(),
               )
             : Image.file(_selectedImage!),
       ),

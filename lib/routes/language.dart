@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:objectremove/services/app_translations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // List of supported locales
@@ -17,19 +17,20 @@ const supportedLocales = [
   Locale('it', ''), // Italian
 ];
 
-// Language data for display
+// Language data for display (only showing well-supported languages)
 const languageData = [
   {'locale': Locale('en', ''), 'name': 'English', 'flag': '🇺🇸'},
   {'locale': Locale('es', ''), 'name': 'Spanish', 'flag': '🇪🇸'},
   {'locale': Locale('fr', ''), 'name': 'French', 'flag': '🇫🇷'},
-  {'locale': Locale('de', ''), 'name': 'German', 'flag': '🇩🇪'},
-  {'locale': Locale('zh', ''), 'name': 'Chinese', 'flag': '🇨🇳'},
-  {'locale': Locale('ja', ''), 'name': 'Japanese', 'flag': '🇯🇵'},
-  {'locale': Locale('ko', ''), 'name': 'Korean', 'flag': '🇰🇷'},
-  {'locale': Locale('ar', ''), 'name': 'Arabic', 'flag': '🇸🇦'},
-  {'locale': Locale('pt', ''), 'name': 'Portuguese', 'flag': '🇵🇹'},
-  {'locale': Locale('hi', ''), 'name': 'Hindi', 'flag': '🇮🇳'},
-  {'locale': Locale('it', ''), 'name': 'Italian', 'flag': '🇮🇹'},
+  {'locale': Locale('ar', ''), 'name': 'Arabic', 'flag': '🇸🇦'}, // Arabic flag emoji
+  // Commented out languages that may cause crashes
+  // {'locale': Locale('de', ''), 'name': 'German', 'flag': '��'},
+  // {'locale': Locale('zh', ''), 'name': 'Chinese', 'flag': '��'},
+  // {'locale': Locale('ja', ''), 'name': 'Japanese', 'flag': '��'},
+  // {'locale': Locale('ko', ''), 'name': 'Korean', 'flag': '��'},
+  // {'locale': Locale('pt', ''), 'name': 'Portuguese', 'flag': '🇵🇹'},
+  // {'locale': Locale('hi', ''), 'name': 'Hindi', 'flag': '🇮🇳'},
+  // {'locale': Locale('it', ''), 'name': 'Italian', 'flag': '🇮🇹'},
 ];
 
 class LanguageSettingsPage extends StatefulWidget {
@@ -72,8 +73,8 @@ class _LanguageSettingsPageState extends State<LanguageSettingsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
-              title: Text(
-                AppLocalizations.of(context)!.language,
+              title: TranslatableText(
+                'Language',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -138,11 +139,10 @@ class _LanguageSettingsPageState extends State<LanguageSettingsPage> {
                     _saveLocale(_selectedLocale); // Save locale
                     Navigator.pop(context);
                   },
-                // Update the continue button text to use the correct property name
-child: Text(
-  AppLocalizations.of(context)!.continueButton,
-  style: const TextStyle(fontSize: 18, color: Colors.white),
-),
+                  child: TranslatableText(
+                    'Continue',
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
+                  ),
                 ),
               ),
             ),
