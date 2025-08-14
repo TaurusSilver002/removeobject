@@ -4,6 +4,7 @@ import 'package:objectremove/routes/gallary.dart';
 import 'package:objectremove/routes/onbording.dart';
 import 'package:objectremove/routes/paywall.dart';
 import 'package:objectremove/routes/privacypolicy.dart';
+import 'package:objectremove/routes/save.dart';
 import 'package:objectremove/routes/setting.dart';
 import 'package:objectremove/routes/splash.dart';
 import 'package:objectremove/routes/terms.dart';
@@ -66,14 +67,7 @@ class _MyAppState extends State<MyApp> {
         Locale('es', ''), // Spanish
         Locale('fr', ''), // French
         Locale('ar', ''), // Arabic
-        // Temporarily removed languages that cause crashes
-        // Locale('de', ''), // German
-        // Locale('zh', ''), // Chinese
-        // Locale('ja', ''), // Japanese
-        // Locale('ko', ''), // Korean
-        // Locale('pt', ''), // Portuguese
-        // Locale('hi', ''), // Hindi
-        // Locale('it', ''), // Italian
+       
       ],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
@@ -90,6 +84,13 @@ class _MyAppState extends State<MyApp> {
         '/terms': (context) => const TermsPage(),
         '/privacy': (context) => const PrivacyPolicyPage(),
         '/language': (context) => LanguageSettingsPage(onLocaleChanged: _setLocale),
+        '/save': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+          return SavePage(
+            imageData: args?['imageData'],
+            imageUrl: args?['imageUrl'],
+          );
+        },
       },
     );
   }

@@ -128,6 +128,14 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: TranslatableText('Remove Object', style: const TextStyle(color: Colors.white)),
+        actions: [
+            IconButton(onPressed: (){
+                Navigator.pushNamed(context, '/settings');
+              }, icon: const Icon(Icons.settings, color: Colors.white)),
+        ],
+      ),
       backgroundColor: Colors.black,
       body: isLoading
           ? const Center(child: CircularProgressIndicator(color: Colors.white))
@@ -161,10 +169,7 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           child: Row(
             children: [
-              IconButton(
-                icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-                onPressed: () => Navigator.pop(context),
-              ),
+              
               const SizedBox(width: 10),
               TranslatableText('Remove Object',
                   style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
