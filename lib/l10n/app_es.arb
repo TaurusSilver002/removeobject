@@ -1,0 +1,16 @@
+{
+  "@@locale": "es",
+  "appTitle": "Eliminar Objeto",
+  "detectObjects": "Detectar Objetos",
+  "removeBackground": "Eliminar Fondo",
+  "generateBackground": "Generar Fondo",
+  "removeObject": "Eliminar Objeto",
+  "processing": "Procesando...",
+  "error": "Error",
+  "success": "Éxito",
+  "cancel": "Cancelar",
+  "generate": "Generar",
+  "selectImage": "Seleccionar Imagen",
+  "takePhoto": "Tomar Foto",
+  "chooseFromGallery": "Elegir de la Galería"
+}

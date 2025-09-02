@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "appTitle": "Object Remove",
+  "detectObjects": "Detect Objects",
+  "removeBackground": "Remove Background",
+  "generateBackground": "Generate Background",
+  "removeObject": "Remove Object",
+  "processing": "Processing...",
+  "error": "Error",
+  "success": "Success",
+  "cancel": "Cancel",
+  "generate": "Generate",
+  "selectImage": "Select Image",
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery"
+}

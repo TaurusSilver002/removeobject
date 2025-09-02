@@ -129,7 +129,12 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TranslatableText('Remove Object', style: const TextStyle(color: Colors.white)),
+        backgroundColor: Colors.black,
+        shadowColor: Colors.black,
+        centerTitle: true,
+        title: TranslatableText('Remove Object',
+         style: const TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),
+         ),
         actions: [
             IconButton(onPressed: (){
                 Navigator.pushNamed(context, '/settings');
@@ -143,7 +148,7 @@ class _GalleryFromDeviceState extends State<GalleryFromDevice> {
               children: [
                 Column(
                   children: [
-                    _buildHeader(),
+                   // _buildHeader(),
                     if (hasPermission) _buildCategoryTabs(),
                     Expanded(
                       child: hasPermission

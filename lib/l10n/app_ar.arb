@@ -1,0 +1,16 @@
+{
+  "@@locale": "ar",
+  "appTitle": "إزالة الكائن",
+  "detectObjects": "كشف الكائنات",
+  "removeBackground": "إزالة الخلفية",
+  "generateBackground": "توليد الخلفية",
+  "removeObject": "إزالة الكائن",
+  "processing": "جاري المعالجة...",
+  "error": "خطأ",
+  "success": "نجح",
+  "cancel": "إلغاء",
+  "generate": "توليد",
+  "selectImage": "اختيار صورة",
+  "takePhoto": "التقاط صورة",
+  "chooseFromGallery": "اختيار من المعرض"
+}
